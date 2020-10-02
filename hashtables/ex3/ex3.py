@@ -2,9 +2,16 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
-
-    return result
+    mem = {}
+    for num in arrays[0]:
+        mem[num] = 1
+    
+    for arr in arrays[1:]:
+        for num in arr:
+            if num in mem:
+                mem[num] += 1
+    
+    return [k for k in mem if mem[k]==len(arrays)]
 
 
 if __name__ == "__main__":
