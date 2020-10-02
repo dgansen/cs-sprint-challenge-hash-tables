@@ -2,8 +2,15 @@ def has_negatives(a):
     """
     YOUR CODE HERE
     """
-    # Your code here
-
+    d = {}
+    result = []
+    for elem in a:
+        if elem not in d:
+            d[elem*-1] = elem
+        else:
+            pos = elem if elem > 0 else d[elem]
+            if pos not in result:
+                result.append(pos)
     return result
 
 
